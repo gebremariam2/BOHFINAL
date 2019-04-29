@@ -1,0 +1,49 @@
+<h2>My Users</h2>
+<ul class="users">
+  <li *ngFor="let user of users"
+    [class.selected]="user === selectedUser"
+    (click)="onSelect(user)">
+    <span class="badge">{{user.id}}</span> {{user.name}}
+  </li>
+</ul>
+
+
+  
+<div *ngIf="selectedUser">
+
+  <h2>{{selectedUser.name + ' ' + selectedUser.last | uppercase}} Details</h2>
+  <div><span>ID Number: </span>{{selectedUser.id}}</div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="selectedUser.name" placeholder="First"/>
+      <input [(ngModel)]="selectedUser.last" placeholder="Last"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Address:
+      <input [(ngModel)]="selectedUser.address" placeholder="Address"/>
+    </label>
+  </div>
+
+  <div>
+    <label>Phone:
+      <input [(ngModel)]="selectedUser.phone" placeholder="Phone"/>
+    </label>
+  </div>
+
+  <button (click)="save()">save</button>
+
+</div>
+
+
+<div> 
+<div>
+  <label>Add User!:
+    <input #heroName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(heroName.value); heroName.value=''">
+    Add
+  </button>
+</div>
