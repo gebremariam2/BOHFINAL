@@ -18,6 +18,7 @@ import { ApplicationComponent } from './application/application.component';
 import { EmployersComponent } from './employers/employers.component';
 import { EmployerInfoComponent } from './employer-info/employer-info.component';
 
+
 const config = { apiKey: "AIzaSyAOivwmNprZq9amFjJUPAaS3L4Vrd0XJIs",
 authDomain: "bohv1-7446b.firebaseapp.com",
 databaseURL: "https://bohv1-7446b.firebaseio.com",
