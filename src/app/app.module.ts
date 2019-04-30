@@ -7,9 +7,16 @@ import { HttpClientModule }    from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
+import { AppRoutingModule }     from './app-routing.module';
+
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HomeComponent } from './home/home.component';
+import { ApplicantsComponent } from './applicants/applicants.component';
+import { ApplicationComponent } from './application/application.component';
+import { EmployersComponent } from './employers/employers.component';
+import { EmployerInfoComponent } from './employer-info/employer-info.component';
 
 
 const config = { apiKey: "AIzaSyAOivwmNprZq9amFjJUPAaS3L4Vrd0XJIs",
@@ -22,7 +29,12 @@ messagingSenderId: "1008832006553"}
 @NgModule({
   declarations: [
     AppComponent,
-    UsersComponent
+    UsersComponent,
+    HomeComponent,
+    ApplicantsComponent,
+    ApplicationComponent,
+    EmployersComponent,
+    EmployerInfoComponent
   ],
   imports: [
     BrowserModule,
