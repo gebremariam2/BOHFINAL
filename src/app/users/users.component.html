@@ -1,41 +1,206 @@
-<h2>My Users</h2>
+<h2>Current Applicants</h2>
+
 <ul class="users">
+
   <li *ngFor="let user of users"
+
     [class.selected]="user === selectedUser"
+
     (click)="onSelect(user)">
+
     <span class="badge">{{user.id}}</span> {{user.name}}
+
   </li>
+
 </ul>
 
+ 
 
-  
+ 
+
 <div *ngIf="selectedUser">
 
+ 
+
   <h2>{{selectedUser.name + ' ' + selectedUser.last | uppercase}} Details</h2>
+
   <div><span>ID Number: </span>{{selectedUser.id}}</div>
+
   <div>
+
     <label>Name:
+
       <input [(ngModel)]="selectedUser.name" placeholder="First"/>
+
       <input [(ngModel)]="selectedUser.last" placeholder="Last"/>
+
     </label>
+
   </div>
 
-  <div>
-    <label>Address:
-      <input [(ngModel)]="selectedUser.address" placeholder="Address"/>
-    </label>
-  </div>
+ 
 
   <div>
+
+    <label>Street Address:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Street Address"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>City:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="City"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>State:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="State"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Zip Code:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Zip Code"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
     <label>Phone:
+
       <input [(ngModel)]="selectedUser.phone" placeholder="Phone"/>
+
     </label>
+
   </div>
+
+ 
+
+  <div>
+
+    <label>Referral Source:
+
+      <input [(ngModel)]="selectedUser.phone" placeholder="Phone"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Ready To Work?:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Ready to Work?"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>City Link Status:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="City Link Status"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Staffing Agency:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Staffing Agency"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Placement Options:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Placement Options (3)"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Additional Qualifications:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Additional Qualifications"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>Support Contact:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="Support Contact"/>
+
+    </label>
+
+  </div>
+
+ 
+
+  <div>
+
+    <label>LPH Resident:
+
+      <input [(ngModel)]="selectedUser.address" placeholder="LPH Resident"/>
+
+    </label>
+
+  </div>
+
+ 
 
   <button (click)="save()">save</button>
 
-</div>
+ 
 
+</div>
 
 <div> 
 <div>
@@ -43,7 +208,7 @@
     <input #heroName />
   </label>
   <!-- (click) passes input value to add() and then clears the input -->
-  <button (click)="add(heroName.value); heroName.value=''">
+  <button (click)="add(heroUser.value); userName.value=''">
     Add
   </button>
 </div>

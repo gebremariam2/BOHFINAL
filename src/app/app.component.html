@@ -1,9 +1,32 @@
+
 <nav>
-    <a routerLink="/home">Home</a>
+    <a routerLink="/home" routerLinkActive="active">Home</a>
     <a routerLink="/applicants">Applicants</a>
     <a routerLink="/application">Application</a>
     <a routerLink="/Employers">Employers</a>
     <a routerLink="/employer-info">Employer Information</a>
-  </nav>
+</nav>
+
   <app-users></app-users>
-  
+
+
+    
+<div *ngIf="auth.user$ | async; then authenticated else guest">
+    </div>
+    
+    <ng-template #guest>
+    
+    <button (click)="auth.googleSignin()">
+        <i class="fa fa-google"></i> Root Login
+    </button>
+    
+    </ng-template>
+    
+    <ng-template #authenticated>
+    <div *ngIf="auth.user$ | async as user">
+        <h6>Hello, {{ user.displayName }}</h6>
+        <p>UID: {{ user.uid }}</p>
+        <button (click)="auth.signOut()">Logout</button>
+    </div>
+    </ng-template>
+    

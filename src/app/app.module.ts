@@ -8,7 +8,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppRoutingModule }     from './app-routing.module';
-
+import { RouterModule, Routes } from '@angular/router';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -18,13 +18,17 @@ import { ApplicationComponent } from './application/application.component';
 import { EmployersComponent } from './employers/employers.component';
 import { EmployerInfoComponent } from './employer-info/employer-info.component';
 
-
 const config = { apiKey: "AIzaSyAOivwmNprZq9amFjJUPAaS3L4Vrd0XJIs",
 authDomain: "bohv1-7446b.firebaseapp.com",
 databaseURL: "https://bohv1-7446b.firebaseio.com",
 projectId: "bohv1-7446b",
 storageBucket: "bohv1-7446b.appspot.com",
-messagingSenderId: "1008832006553"}
+messagingSenderId: "1008832006553"
+}
+
+const appRoutes: Routes = [
+  { path: 'home', component: HomeComponent },
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +41,12 @@ messagingSenderId: "1008832006553"}
     EmployerInfoComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes),
+    AngularFireModule.initializeApp(config),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -47,4 +57,7 @@ messagingSenderId: "1008832006553"}
   providers: [],
   bootstrap: [AppComponent]
 })
+
+
+
 export class AppModule { }
