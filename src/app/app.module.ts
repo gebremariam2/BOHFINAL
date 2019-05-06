@@ -13,7 +13,6 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HomeComponent } from './home/home.component';
-import { ApplicantsComponent } from './applicants/applicants.component';
 import { ApplicationComponent } from './application/application.component';
 import { EmployersComponent } from './employers/employers.component';
 import { EmployerInfoComponent } from './employer-info/employer-info.component';
@@ -36,7 +35,6 @@ const appRoutes: Routes = [
     AppComponent,
     UsersComponent,
     HomeComponent,
-    ApplicantsComponent,
     ApplicationComponent,
     EmployersComponent,
     EmployerInfoComponent
